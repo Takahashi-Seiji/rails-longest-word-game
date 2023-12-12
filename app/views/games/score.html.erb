@@ -1,0 +1,21 @@
+<div data-controller="hello" class="container mt-3 d-flex flex-column align-items-center justify-content-center">
+  <h1 class="text-warning">RESULT</h1>
+  <h1><%= loading_animation %></h1>
+  <div class=" d-flex flex-column align-items-center justify-content-center mb-3">
+    <h2 class="text-danger">Your attempt:</h2>
+    <h2 class="text-primary"><%= @answer %></h2>
+  </div>
+
+  <div class="d-flex flex-column align-items-center justify-content-center">
+    <h2 class="text-danger">Your score:</h2>
+    <h2>Analyzing your "super complex" word</h2>
+    <div id="myProgress" class="border border-secondary shadow rounded bg-secondary">
+      <div data-hello-target="bar" id="myBar" class="border rounded bg-primary d-flex align-items-center justify-content-center"></div>
+    </div>
+
+    <div data-hello-target="result" class="d-flex flex-column alignt-items-center justify-content-center mt-3 d-none">
+      <h2><%= @score %></h2>
+      <h2><%= @message %></h2>
+    </div>
+  </div>
+</div>

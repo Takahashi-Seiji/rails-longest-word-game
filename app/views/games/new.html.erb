@@ -1,0 +1,24 @@
+<div class="container mt-3 d-flex flex-column align-items-center justify-content-center">
+    <h1 class="text-warning">Welcome to the Longest Word Game!</h1>
+    <h2 class="text-info">Are you ready?</h2>
+    <h1>---------------------------------</h1>
+
+    <div class="d-flex">
+      <% @letters.each do |letter| %>
+        <div class="border border-2 border-dark border-rounded p-3 m-2 text-light bg-secondary">
+          <%= letter %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="border p-3 mt-3 rounded-4 d-flex flex-column align-items-center justify-content-center">
+      <h3 class="text-danger">What you got?</h3>
+      <form action="/score" method="post" data-turbo="false">
+        <input type="text" name="answer" placeholder="Your best guess here..." class="form-control mb-4 mt-3">
+        <input type="submit" value="Register answer" class="btn btn-primary w-100">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :letters, value: @letters %>
+
+      </form>
+    </div>
+</div>
